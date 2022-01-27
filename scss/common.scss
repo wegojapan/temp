@@ -1,0 +1,149 @@
+@import "./settings";
+
+* {outline: none;}
+html,article,aside,audio,blockquote,body,dd,dialog,div,dl,dt,
+fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,input,
+li,mark,menu,nav,ol,p,pre,section,td,textarea,th,time,ul,
+video,main{margin:0;padding:0;word-wrap:break-word;overflow-wrap:break-word;-webkit-font-feature-settings:"palt";font-feature-settings:"palt"}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;word-wrap:break-word;overflow-wrap:break-word}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}q:after,q:before{content:""}embed,object{vertical-align:top}hr,legend{display:none}h1,h2,h3,h4,h5,h6{font-size:100%}abbr,acronym,fieldset,img{border:0}li{list-style-type:none}sup{vertical-align:super;font-size:0.5em}img{vertical-align:top}i{font-style:normal}svg{vertical-align:middle}article,aside,dialog,figure,footer,header,hgroup,nav,section,main{display:block}nav,ul{list-style:none}
+
+html {
+	font-size: small;
+	line-height: 1.5;
+    .fancybox-button--thumbs, .fancybox-button--play {display: none;}
+}
+body {
+	color: $baseColor;
+	background: #fff;
+	-webkit-text-size-adjust: none;
+	@include fsz($baseSize, 13);
+	.ie & {
+		@include fsz($baseSize, 13.4);
+	}
+	a {
+		color: $baseColor;
+        text-decoration: none;
+        outline: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	img {
+		max-width: 100%;
+		-webkit-touch-callout: none;
+		line-height: 1;
+        outline: none;
+	}
+	// After <iphone-X> setting
+	// // right space
+	// padding: constant(safe-area-inset-right);
+	// // bottom space
+	// padding: constant(safe-area-inset-bottom);
+	// //　left space
+	// padding: constant(safe-area-inset-left);
+	// // top space
+	// padding: constant(safe-area-inset-top);
+}
+body,
+pre,
+input,
+textarea,
+select {
+	@include font("kr");
+}
+input,
+select,
+textarea {
+	font-size: 100%;
+}
+select {
+	@include mq(sp) {
+		// font-size: 16px;
+	}
+}
+
+//----------------------------------------------//
+// ie8 Supports
+//----------------------------------------------//
+html.ie8 {
+	.view_tab,
+	.view_tab_sp,
+	.view_sp {
+		display: none !important;
+	}
+	#con_page {
+		min-width: $columnWidth * 1px !important;
+		margin: auto;
+		font-size: 100% !important;
+	}
+}
+
+//----------------------------------------------//
+// view_setting
+//----------------------------------------------//
+body {
+	@include mq(pc) {
+		.view_tab-sp,
+		.view_tab {
+			display: none !important;
+		}
+	}
+	@include mq(pc_tab) {
+		.view_sp {
+			display: none !important;
+		}
+	}
+	@include mq(tab_sp) {
+		.view_pc {
+			display: none !important;
+		}
+	}
+	@include mq(sp) {
+		.view_pc-tab,
+		.view_tab {
+			display: none !important;
+		}
+	}
+}
+
+//----------------------------------------------//
+// .mouseOver
+//----------------------------------------------//
+
+//----------------------------------------------//
+// #con_page
+//----------------------------------------------//
+#con_page {
+	overflow: hidden;
+	@include mq(pc) {
+		width: 100%;
+		margin: auto;
+	}
+	@include mq(pc_tab) {
+		font-size: 100% !important;
+	}
+	// @include mq(pc) {
+	// 	@include mq(pc_l) {}	//1920 ~ 1560			(1920-1200)/2+1
+	// 	@include mq(pc_s) {} //1559 ~ $columnWidth
+	// }
+	// @include mq(pc_tab) {}
+	// @include mq(tab) {}
+	// @include mq(tab_sp) {}
+	// @include mq(sp) {}
+	// @include mq(min_w, 1px) {}
+	// @include mq(max_w, 1700px) {}
+	// @include mq(min_max_w, 768px, 1023px) {}
+}
+
+
+header {
+    background-color: #ebebeb;
+    height: 10vh;
+}
+#con_page {
+    height: 30vh;
+}
+
+footer {
+    background-color: #ddd;
+    height: 10vh;
+}
