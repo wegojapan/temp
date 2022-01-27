@@ -15,7 +15,7 @@
 <body>
     <?php include_once('./inc/header.php'); ?>
     <div id="con_page">
-        asdfasdfsadfafd
+        asdfasdfsadfafdasdf
         
     </div>
     <?php include_once('./inc/footer.php'); ?>
